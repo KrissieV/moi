@@ -1,0 +1,322 @@
+//Constrain styles to home page
+.home {
+  .image-block {
+    position:absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top:0;
+    @media only screen and (min-width:$medium + 1) {
+      position: relative;
+    }
+    @media only screen and (max-width:$medium) {
+      width:100%;
+      display:block;
+    }
+  }
+  .image-block::after {
+    display: block;
+    content: '';
+    @media only screen and (max-width:$medium) {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+48,1+100 */
+      background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 48%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 48%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 48%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    }
+  }
+
+  .form_block {
+    background-color:$brandColorLtGray;
+    @include rem(padding-top,40);
+    @include rem(padding-bottom,20);
+
+  .gfield_label {
+    display:none !important;
+  }
+
+  @media only screen and (min-width: $medium + 1) {
+    .gform_heading {
+      display:block;
+      float:left;
+      clear:none;
+      width:25% !important;
+      text-align:right;
+      @include rem(font-size,22);
+    }
+    .gform_body {
+      display:block;
+      float:left;
+      clear:none;
+      width:50%;
+
+      li.gfield {
+        margin:0 !important;
+      }
+
+      .ginput_container {
+        margin:0 !important;
+      }
+        input {
+          width:100% !important;
+        }
+      }
+      .gform_footer {
+        display:block;
+        float:left;
+        clear:none  !important;
+        width:20%;
+        margin:0 !important;
+        padding:0 !important;
+      }
+    }
+  }
+
+  .row {
+    position: relative;
+  }
+
+  .content_image_block__copy {
+    position: relative;
+    z-index: 100;
+
+    @media only screen and (min-width:$medium + 1) {
+      position: absolute;
+    }
+
+    h1 {
+      font-size:200%;
+      line-height: 1.35;
+
+      @media only screen and (min-width:$medium + 1) {
+        font-size: 250%;
+      }
+    }
+
+    h1 span {
+      //display: inline-block;
+      background: $brandColorRed;
+      color: $brandColorWhite;
+
+    }
+    p {
+      text-shadow: 0px 0px 3px $brandColorWhite;
+    }
+  }
+
+  .panel {
+    position: relative;
+  }
+
+  a.button-box {
+    @include button;
+    color: $brandColorGray;
+    font-size: 100%;
+    font-family: $fontHeading;
+    padding: 8px 30px;
+    display:inline-block;
+
+    @media only screen and (min-width:$medium + 1) {
+      font-size: 150%;
+      padding: 10px 40px;
+    }
+  }
+
+//Section Specific Styles
+
+  #group1 {
+    .image-block {
+          top:10%;
+    }
+     .content_image_block__copy {
+       padding-left:2%;
+       margin-top: 25%;
+       @media only screen and (min-width:$medium + 1) {
+        padding-left:30%;
+        position: absolute;
+       }
+
+     }
+
+     a.button-box {
+       float: right;
+     }
+   }
+
+  #group3 {
+    .content_image_block__copy {
+      //position: absolute;
+      //right: 20%;
+      //width: 37%;
+     margin-top: 5%;
+
+
+      p {
+        @media only screen and (min-width:$medium + 1) {
+          width: 40%;
+        }
+      }
+
+    }
+
+    a.button-box {
+      //float: right;
+    }
+  }
+
+  #group4 {
+    margin-bottom: 10%;
+
+    
+    &::after {
+      content:'';
+      display:block;
+      padding-top:25%;
+    }
+}
+
+  .stats_graphic {
+      background-color:$brandColorLtGray;
+     
+      position: relative;
+
+      .stats {
+          display:block;
+          position:absolute;
+          top:-10%;
+          background-image: url(/wp-content/themes/menofiron/images/stats-graphic.svg);
+          background-size:110%;
+          background-position: 50% 0;
+          background-repeat: no-repeat;
+          width:100%;
+
+          &::after {
+              display:block;
+              content:'';
+              padding-top: 30%;
+          }
+
+          .men-count,.churches-count,.cities-count {
+              position:absolute;
+              top:41%;
+              color:$brandColorWhite;
+              text-align:center;
+              width:20%;
+              
+              @media only screen and (min-width:$xsmall + 1) {
+                @include rem(font-size,26);
+              }
+              @media only screen and (min-width:$small + 1) {
+                @include rem(font-size,36);
+              }
+              @media only screen and (min-width:$medium + 1) {
+                @include rem(font-size,46);
+              }
+          }
+          .men-count {
+              left:15.5%;
+          }
+          .churches-count {
+              left:40.1%;
+          }
+          .cities-count {
+              left:64.8%;
+          }
+
+
+      }
+  }
+
+  #group5 {
+    h2 {
+      text-align: center;
+    }
+
+    h2 span{
+      background: #000;
+      color: $brandColorWhite;
+      font-size: 150%;
+    }
+
+    .sidecopy {
+      margin-top: 30px;
+
+        p.circle-key::before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      p.circle-key.primary::before {
+        background: $brandColorRed;
+      }
+
+      p.circle-key.secondary::before {
+        background: #000;
+      }
+
+
+
+    }
+    .col-md-7 {
+      background-image:url('/wp-content/themes/menofiron/images/loading.gif');
+      background-repeat:no-repeat;
+      background-position: center center;
+    }
+
+  }
+
+  #group6 {
+    .content_image_block__copy {
+      margin-top: 30%;
+
+
+      @media only screen and (min-width:$medium + 1) {
+        position: absolute;
+        right: 5%;
+        width: 50%;
+        margin-top: 3%;
+       }
+
+      p {
+        width: 80%;
+      }
+
+
+    }
+
+    a.button-box {
+      float: right;
+    }
+  }
+
+}
+
+.line-decoration {
+  @include linedecoration;
+}
+.line-animation-wrapper {
+  overflow:hidden;
+  width:100%;
+  display: block;
+  position: absolute;
+  z-index: 5;
+  pointer-events:none;
+  @media only screen and (max-width:$medium) {
+    bottom:-80px;
+  }
+
+  @media only screen and (min-width:$medium + 1) {
+    top: 55%;
+  }
+
+  .line-animation {
+    display: none;
+    width: 105%;
+    position:relative;
+    right:2.5%;
+    pointer-events:none;
+  }
+}

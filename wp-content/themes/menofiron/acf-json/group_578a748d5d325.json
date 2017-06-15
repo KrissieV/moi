@@ -1,0 +1,52 @@
+{
+    "key": "group_578a748d5d325",
+    "title": "Implementation Plan Church",
+    "fields": [
+        {
+            "key": "field_578a747d692dd",
+            "label": "Church",
+            "name": "church",
+            "type": "relationship",
+            "instructions": "Select the church this Implementation Plan is for.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "churches"
+            ],
+            "taxonomy": [
+                
+            ],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": 1,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "implementation_plans"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1468691807
+}

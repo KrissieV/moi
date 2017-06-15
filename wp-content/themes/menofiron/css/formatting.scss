@@ -1,0 +1,60 @@
+// resets
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	@include bodyTypography;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	@include headingTypography;
+}
+
+h1 {
+	font-size: 200%; // 32px
+}
+h2 {
+	font-size: 175%; // 28px
+}
+h3 {
+	font-size: 150%; // 24px
+}
+h4 {
+	font-size: 125%; // 20px
+}
+h5 {
+	font-size: 112.5%; // 18px
+}
+h6 {
+	font-size: 100%; // 16px
+}
+
+p {
+	font-size:20px;
+	line-height: 1.8;
+}
+
+.gform_wrapper {
+	.gform_footer {
+		input[type="submit"] {
+			@include button;
+			font-size:20px !important;
+			padding-left:20px !important;
+			padding-right:20px !important;
+			border-color:$brandColorGray;
+		}
+	}
+	span.gform_description {
+		position:relative;
+		top:5px;
+	}
+	
+}
+.gform_wrapper {
+	input,textarea,input[type="search"] {
+		border-radius:0;
+		padding:10px !important;
+	}
+}

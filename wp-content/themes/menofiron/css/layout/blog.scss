@@ -1,0 +1,210 @@
+.blog,.single {
+	.comments-area {
+		background-color:$brandColorLtGray;
+		@include rem(padding,30);
+		position:relative;
+		z-index:100;
+		@include rem (margin-bottom,50);
+
+		button, input[type="button"], input[type="reset"], input[type="submit"] {
+			@include rem(padding-top,10);
+			@include rem(padding-bottom,10);
+			color:$brandColorRed;
+		}
+		label {
+			width:60px;
+			display:inline-block;
+		}
+	}
+	.post {
+		background-color:$brandColorLtGray;
+		@include rem(padding-top,30);
+		@include rem(padding-bottom,30);
+		position:relative;
+		z-index:100;
+
+		.featured-image {
+			@include rem(margin-bottom,30);
+		}
+
+		.entry-header,.entry-content,.entry-footer {
+			@include rem(padding-left,30);
+			@include rem(padding-right,30);
+		}
+
+		.entry-title {
+			@include rem(margin-bottom,15);
+			a {
+				color:$brandColorGray;
+
+			}
+		}
+
+		.posted-on a {
+			position:absolute;
+			top:0;
+			right:0;
+			background-color:darken($brandColorLtGray,20%);
+			display:block;
+			@include rem(padding-right,10);
+			@include rem(padding-left,10);
+			color:$brandColorWhite;
+		}
+		.tags-links {
+			position:absolute;
+			width:100%;
+			left:0;
+			right:0;
+			display:block;
+			background-color:$brandColorRed;
+			color:$brandColorWhite;
+			@include rem(padding-right,10);
+			@include rem(padding-left,10);
+			@include rem(font-size,14);
+
+			a {
+				color:$brandColorWhite;
+			}
+		}
+		.read-more {
+			width:100%;
+			text-align: right;
+			display:inline-block;
+
+			a {
+				@include button;
+				display:inline-block;
+				@include rem(font-size,14);
+			}
+		}
+	}
+	.page-header {
+		h1.page-title {
+			@media only screen and (max-width:$medium) {
+				top:55%;
+			}
+		}
+		p {
+			@media only screen and (max-width:$medium) {
+				left:5%;
+			}
+		}
+	}
+}
+.blog .post .tags-links {
+	bottom:0;
+}
+.single .post .tags-links {
+	top:0;
+}
+.single .post .posted-on a {
+	top:1.3rem;
+}
+.content-area {
+	overflow:hidden;
+}
+.page .sidebar {
+	background-color:$brandColorLtGray;
+	@include rem(padding,30);
+
+	&::after {
+		display:block;
+		position: absolute;
+		top:0;
+		bottom:0;
+		right:-33%;
+		left:0;
+		content:'';
+		background-color:$brandColorLtGray;
+		z-index: -1;
+	}
+
+	.button {
+		display:inline-block;
+	}
+}
+.blog .sidebar,.single .sidebar {
+	@media only screen and (max-width:$large) {
+		z-index:100;
+		position:relative;
+	}
+}
+.blog .sidebar .widget,.single .sidebar .widget {
+	background-color:$brandColorLtGray;
+	@include rem(margin-bottom,30);
+	position:relative;
+	@include rem(padding,30);
+
+	@media only screen and (min-width:$large + 1) {
+		&.gform_widget {
+			@include rem(padding-right,5);
+		}
+	}
+	input[type="search"] {
+		width:97%;
+
+		@media only screen and (min-width:$large + 1) {
+			width:100%;
+		}
+	}
+	.search-submit {
+		float:right;
+		position: relative;
+		top:-3.5rem;
+		right:0;
+		text-indent:-9999em;
+		background-image:url('/wp-content/themes/menofiron/images/search-icon.svg');
+		background-repeat:no-repeat;
+		border:0;
+		width:1.5rem;
+		height:1.5rem;
+		background-size:contain;
+
+		@media only screen and (min-width:$large + 1) {
+			right:-2rem;
+		}
+
+		&:hover {
+			box-shadow:none;
+		}
+	}
+
+	@media only screen and (min-width:$large + 1) {
+		&::after {
+			display:block;
+			position: absolute;
+			top:0;
+			bottom:0;
+			right:-53%;
+			left:0;
+			content:'';
+			background-color:$brandColorLtGray;
+			z-index: -1;
+		}
+	}
+	
+
+	.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
+		width: 100%;
+	}
+	.gform_wrapper .top_label .gfield_label {
+		display:none;
+	}
+	.gform_wrapper .gform_footer {
+		padding:0;
+	}
+	.gform_wrapper span.gform_description {
+		margin-bottom:0;
+	}
+	.gform_wrapper {
+		margin:0;
+	}
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding-right:0;
+	}
+	.tagcloud a {
+		background-color:$brandColorRed;
+		color:$brandColorWhite;
+		@include rem(padding,3);
+	}
+}

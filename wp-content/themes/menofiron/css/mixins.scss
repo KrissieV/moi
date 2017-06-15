@@ -1,0 +1,124 @@
+// Typeography
+ 
+@mixin bodyTypography {
+	font-family: $fontBody;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+@mixin headingTypography {
+	font-family: $fontHeading;
+	font-weight: 300; // light
+}
+
+@mixin rem($selector,$target,$context:$root-font-size) {
+  #{$selector} : ($target) + px;
+  #{$selector} : remcalc($target,$context) + rem;
+}
+
+@mixin button {
+	background:transparent;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	@include rem(padding-top,5);
+	@include rem(padding-bottom,5);
+	@include rem(padding-left,25);
+	@include rem(padding-right,25);
+	border:2px solid $brandColorRed;
+	@include rem(margin-bottom,20);
+	@include rem(font-size,22);
+
+	&:hover {
+		border-color:$brandColorGray;
+	}
+}
+
+@mixin highlighter {
+	background-color: $brandColorRed;
+	color:$brandColorWhite;
+	line-height: 1;
+}
+
+@mixin socialIcons {
+	font-family: "SSSocial";
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	text-rendering: optimizeLegibility;
+	white-space: nowrap;
+	/*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+	-moz-font-feature-settings: "liga=1";
+	-moz-font-feature-settings: "liga";
+	-ms-font-feature-settings: "liga" 1;
+	-o-font-feature-settings: "liga";
+	font-feature-settings: "liga";
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+@mixin bp($class) {
+	@if $class == xs {
+		@media (max-width: 480px) {
+			@content;
+		}
+	} @else if $class == sm {
+		@media (min-width: 640px) {
+			@content;
+		}
+	} @else if $class == md {
+		@media (min-width: 769px) {
+			@content;
+		}
+	} @else if $class == lg {
+		@media (min-width: 1025px) {
+			@content;
+		}
+	}
+	@else if $class == xl {
+		@media (min-width: 1281px) {
+			@content;
+		}
+	} @else {
+	}
+}
+
+@mixin linedecoration {
+	display:block;
+	position:absolute;
+	top:19%;
+	background-image: url(/wp-content/themes/menofiron/images/lines-A.svg);
+	background-size:110%;
+	background-position: 30% 0;
+	background-repeat: no-repeat;
+	width:100%;
+	z-index: 5;
+	pointer-events: none;
+
+	&::after {
+		display:block;
+		content:'';
+		padding-top: 51%;
+	}
+	@media only screen and (min-width:$xsmall + 1) {
+		top:25%;
+	}
+	@media only screen and (min-width:$small + 1) {
+		top:28%;
+	}
+	@media only screen and (min-width:$medium + 1) {
+		top:35%;
+	}
+	@media only screen and (min-width:$large + 1) {
+		top:41%;
+	}
+	@media only screen and (min-width:$xlarge + 1) {
+		top:60%;
+	}
+	
+	
+	
+
+
+}

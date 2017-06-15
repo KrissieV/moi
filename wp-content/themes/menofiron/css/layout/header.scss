@@ -1,0 +1,264 @@
+#masthead {
+	position:fixed;
+	z-index:10000;
+	width:100%;
+	margin-top:0;
+	padding-top:0;
+	//display: none;
+	
+	&::before {
+		width:82%;
+		display:block;
+		position:absolute;
+		content:'';
+		left:0;
+		bottom:15px;
+		height:115px;
+		z-index:-1;
+		background-color:$brandColorWhite;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+  		@media only screen and (min-width:$medium + 1) {
+  			height:120px;
+  			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+	  		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+	  		bottom:-55px;
+  		}
+	}
+	&::after {
+		width:18.1%;
+		display:block;
+		position:absolute;
+		content:'';
+		right:0;
+		bottom:15px;
+		height:115px;
+		z-index:-1;
+		background-color:$brandColorWhite;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  		clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+
+  		@media only screen and (min-width:$medium+ 1) {
+  			height:120px;
+  			-webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+	  		clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+	  		bottom:-55px;
+  		}
+	}
+
+	
+	.site-brand {
+		display:block;
+		float:left;
+		//@include rem(padding,10);
+		background-color:$brandColorWhite;
+
+		@media only screen and (max-width: $medium) {
+			width:20%;
+		}
+
+		@media only screen and (min-width:$medium + 1) {
+			@include rem(padding,20);
+			max-width: 180px;
+			position:absolute;
+			left:10%;
+		}
+	}
+
+
+	.main-navigation {
+		.primary-nav-wrapper {
+			
+			position:relative;
+			float:right;
+
+			.menu-primary-container {
+				@include rem(margin-right,80);
+
+			}
+
+			@media only screen and (min-width: $medium + 1) {
+				.menu-primary-container {
+					@include rem(margin-right,150);
+				}
+			}
+
+			a {
+				color:$brandColorGray;
+				@include rem(font-size,16);
+				@include rem(padding-top,5);
+				@include rem(margin-right,10);
+				@include rem(margin-left,5);
+				margin-top:0;
+				display:block;
+				float:left;
+				position:relative;
+				@include rem(top,-1);
+				border-top:4px solid $brandColorGray;
+
+				@media only screen and (min-width: $medium + 1) {
+					@include rem(font-size,21);
+					@include rem(padding-top,15);
+					@include rem(margin-right,15);
+					@include rem(margin-left,15);
+				}
+
+				&:hover,.active {
+					color:$brandColorRed;
+					text-decoration:none;
+					border-top:4px solid $brandColorRed;
+				}
+			}
+
+			ul {
+				margin:0;
+				padding:0;
+				list-style:none;
+				li {
+					display:block;
+					float:right;
+				}
+			}
+		}
+		.secondary-nav-wrapper {
+			width:100%;
+			background-color:$brandColorLtGray;
+
+			a {
+				color:$brandColorGray;
+				@include rem(font-size,21);
+
+				&:hover,.active {
+					color:$brandColorRed;
+					text-decoration:none;
+				}
+			}
+
+			ul {
+				list-style:none;
+				display:block;
+				float:left;
+				margin:0;
+				padding:0;
+
+				li {
+					display:block;
+					float:left;
+					border-right:1px solid $brandColorGray;
+					@include rem(margin-right,0);
+					@include rem(margin-left,10);
+					@include rem(margin-top,30);
+					@include rem(margin-bottom,30);
+					@include rem(padding-right,20);
+					@include rem(padding-left,15);
+
+					&:last-child {
+						border-right:0;
+					}
+					
+					a {
+						display:block;
+						float:left;
+						text-align:center;
+					}
+
+					ul {
+						li {
+							border-right:0;
+							@include rem(margin-top,5);
+							@include rem(margin-bottom,0);
+							a {
+								@include rem(font-size,16);
+								
+							}
+						}	
+					}
+				}
+			}
+		}
+		#nav-icon {
+		  width: 35px;
+		  height: 24px;
+		  position: absolute;
+		  top:0;
+		  margin-top:15px;
+		  right:0;
+		  margin-right:25px;
+		  -webkit-transform: rotate(0deg);
+		  -moz-transform: rotate(0deg);
+		  -o-transform: rotate(0deg);
+		  transform: rotate(0deg);
+		  -webkit-transition: .5s ease-in-out;
+		  -moz-transition: .5s ease-in-out;
+		  -o-transition: .5s ease-in-out;
+		  transition: .5s ease-in-out;
+		  cursor: pointer;
+		  background:transparent;
+		  border:0;
+
+		  @media only screen and (min-width:$medium + 1) {
+		  	margin-top:25px;
+		  }
+		}
+
+		#nav-icon span {
+		  display: block;
+		  position: absolute;
+		  height: 3px;
+		  width: 100%;
+		  background: $brandColorRed;
+		  border-radius: 3px;
+		  opacity: 1;
+		  left: 0;
+		  -webkit-transform: rotate(0deg);
+		  -moz-transform: rotate(0deg);
+		  -o-transform: rotate(0deg);
+		  transform: rotate(0deg);
+		  -webkit-transition: .25s ease-in-out;
+		  -moz-transition: .25s ease-in-out;
+		  -o-transition: .25s ease-in-out;
+		  transition: .25s ease-in-out;
+		}
+
+		/* Icon 3 */
+
+		#nav-icon span:nth-child(1) {
+		  top: 0px;
+		}
+
+		#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+		  top: 12px;
+		}
+
+		#nav-icon span:nth-child(4) {
+		  top: 24px;
+		}
+
+		#nav-icon.open span:nth-child(1) {
+		  top: 12px;
+		  width: 0%;
+		  left: 50%;
+		}
+
+		#nav-icon.open span:nth-child(2) {
+		  -webkit-transform: rotate(45deg);
+		  -moz-transform: rotate(45deg);
+		  -o-transform: rotate(45deg);
+		  transform: rotate(45deg);
+		}
+
+		#nav-icon.open span:nth-child(3) {
+		  -webkit-transform: rotate(-45deg);
+		  -moz-transform: rotate(-45deg);
+		  -o-transform: rotate(-45deg);
+		  transform: rotate(-45deg);
+		}
+
+		#nav-icon.open span:nth-child(4) {
+		  top: 12px;
+		  width: 0%;
+		  left: 50%;
+		}
+	}
+}

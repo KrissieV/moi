@@ -1,0 +1,144 @@
+.site-footer {
+	background-color:$brandColorLtGray;
+	@include rem(padding-top,50);
+	position:relative;
+
+	.line-decoration {
+		top:0;
+		margin-top:-28%;
+	}
+
+	.row {
+		position: relative;
+		z-index: 100;
+	}
+
+	.widget {
+		display:block;
+		float:left;
+
+		.widget-title {
+			display:none;
+		}
+
+		ul {
+			list-style:none;
+			margin:0;
+			padding:0;
+
+			&#menu-primary {
+				li a {
+					@include button;
+					clear:both;
+					display:inline-block;
+				}
+				li:nth-child(2) a {
+					border-color: $brandColorGray;
+					color: $brandColorGray;
+				}
+			}
+		}
+		&.recent_with_excerpt {
+			.widget-title {
+				@include highlighter;
+				background-color:$brandColorGray;
+				@include rem(font-size,22);
+				font-weight:300;
+			}
+			h2.recent_posts_with_excerpts {
+				@include bodyTypography;
+				@include rem(font-size,18);
+
+				a {
+					color:$brandColorGray;
+				}
+			}
+			p {
+				@include rem(margin-bottom,5);
+			}
+			blockquote {
+				margin:0;
+				padding:0;
+				@include rem(font-size,14);
+			}
+			p.alignright {
+				a {
+					text-decoration:underline;
+					@include rem(font-size,14);
+				}
+			}
+		}
+		#menu-social {
+			li {
+				display:block;
+				float:left;
+
+				a {
+					@include socialIcons;
+					@include rem(font-size,34);
+					color:$brandColorGray;
+					@include rem(margin-right,15);
+
+					&:hover {
+						color:$brandColorRed;
+					}
+				}
+			}
+		}
+		#menu-footer {
+			a {
+				color:$brandColorGray;
+				@include rem(font-size,18);
+
+				&:hover {
+					text-decoration:none;
+					color:$brandColorRed;
+				}
+			}
+		}
+	}
+	.widget:nth-child(4) {
+		clear:both;
+	}
+	.widget:nth-child(3) .widget-title {
+			display:inline-block;
+		}
+
+	.widget:nth-child(2) {
+		@media only screen and (max-width:$medium) {
+			margin-left: 20px;
+		}
+	}
+	@media only screen and (min-width: $medium + 1) {
+		.widget:nth-child(1) {
+			width:25%;
+		}
+		.widget:nth-child(2) {
+			
+			width:25%
+		}
+		.widget:nth-child(3) {
+			
+			width:50%;
+		}
+		.widget:nth-child(4) {
+			width:25%;
+			
+		}
+	}
+	.credits {
+		background-color:$brandColorWhite;
+
+		p {
+			margin-bottom:0;
+			@include rem(font-size,14);
+			@include rem(padding-top,5);
+			@include rem(padding-bottom,5);
+
+			a {
+				color:$brandColorGray;
+				text-decoration:underline;
+			}
+		}
+	}
+}

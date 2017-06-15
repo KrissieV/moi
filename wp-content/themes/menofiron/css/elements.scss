@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: $brandColorRed;
+}
+
+a:visited {
+  color: $brandColorRed;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: $brandColorRed;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+
+.button,button, input[type="button"], input[type="reset"], input[type="submit"] {
+	@include button;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	@include rem(font-size,18);
+	@include rem(margin-top,20);
+}
+.button-sm {
+	background-color:darken($brandColorLtGray,10%);
+	color:$brandColorRed;
+	@include rem(padding-top,5);
+	@include rem(padding-bottom,5);
+	@include rem(padding-right,10);
+	@include rem(padding-left,10);
+	@include rem(margin-right,10);
+	@include rem(margin-bottom,10);
+	border-radius:3px;
+	@include rem(font-size,14);
+	display:inline-block;
+}
+.nav.nav-pills {
+	margin:3rem 0 1.5rem 0;
+}
+.tab-content svg {
+	border:1px solid $brandColorRed;
+	margin-bottom:4rem;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+	background-color:$brandColorRed;
+}
+.page-content,section.copy,.post {
+	ul {
+		list-style:none;
+
+		li:before {
+			content:'';
+			background-color:$brandColorRed;
+			width: .5rem;
+			height: .5rem;
+			display:block;
+			float:left;
+			border-radius: 100%;
+			margin-top: .5rem;
+			margin-right: .5rem;
+		}
+	}
+	.gform_wrapper ul li:before {
+		display:none !important;
+	}
+}
+.gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+	margin-top:0 !important;
+}
+.gfield_radio {
+	li {
+		display:block;
+		float:left;
+		margin-right: 15px !important;
+	}
+}
+#input_15_11.gfield_radio {
+	li:nth-child(1),li:nth-child(5),li:nth-child(6),li:nth-child(7) {
+		label {
+			color:$brandColorRed;
+		}
+	}
+}
+
+//UI Elements
+
+.warning {
+  background: rgba($brandColorRed, .15);
+  border: 1px solid $brandColorRed;
+  padding: 5px;
+}
+.highlighter {
+	@include highlighter;
+}
+blockquote.callout {
+	background-color:$brandColorRed;
+	@include rem(padding,15);
+	color:$brandColorWhite;
+	margin:0;
+	@include rem(margin-bottom,20);
+
+	p {
+		margin-bottom: 0;
+		text-align:center;
+		@include rem(font-size,18);
+	}
+}
+blockquote.calloutGray {
+	background-color:$brandColorLtGray;
+	@include rem(padding,15);
+	color:$brandColorRed;
+	margin:0;
+	@include rem(margin-bottom,20);
+
+	p {
+		margin-bottom: 0;
+		text-align:center;
+		@include rem(font-size,18);
+	}
+}
+blockquote.blockquote {
+	padding-left: 2rem;
+	border-left:10px solid $brandColorRed;
+}
+
+/*--------------------------------------------------------------
+## Table
+--------------------------------------------------------------*/
+table {
+	@include rem(margin-top,20);
+}
+thead {
+	tr {
+		td {
+			background-color:$brandColorLtGray;
+			@include rem(padding,10);
+		}
+	}
+}
+tbody {
+	tr {
+		td {
+			@include rem(padding, 5);
+		}
+
+		&:nth-child(even) {
+			td {
+				background-color:$brandColorLtGray;
+			}
+		}
+	}
+}
